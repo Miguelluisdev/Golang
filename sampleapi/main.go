@@ -1,17 +1,9 @@
 package main
 
 import (
-	"net/http"
-
-	"github.com/labstack/echo/v4"
+	server "githib.com/Miguelluisdev/sample-api/Server"
 )
 
-func landing(c echo.Context) error {
-	return c.String(http.StatusOK, "APi rodando")
-}
-
 func main() {
-	e := echo.New()
-	e.GET("/", landing)
-	e.Logger.Fatal(e.Start(":8000"))
+	server.Start()
 }
